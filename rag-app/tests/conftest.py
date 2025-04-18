@@ -1,3 +1,10 @@
+
+import sys, pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]          # rag-app
+sys.path.insert(0, str(ROOT / "server" / "src"))            # gør 'controllers' og 'services' synlige
+
+
 import pytest
 from server.src.services.generation_service import generate_response
 from unittest.mock import patch

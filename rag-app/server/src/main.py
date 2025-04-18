@@ -1,3 +1,9 @@
+
+import sys, pathlib
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+
 """
 This is the main entry point for the backend application, this will define and instantiate the FastAPI server
 that uses the controllers, models and services defined in the rest of the sub-repo.
@@ -22,7 +28,7 @@ async def lifespan_context(app: FastAPI):
     print("Spinning up lifespan context...")
 
     print("Configure opik...")
-    opik.configure()
+    #opik.configure()
 
     # Note below is not actually being passed around the app, needs work!
     print("Loading embedding model...")
